@@ -1,0 +1,3 @@
+vertebackup - The backbone of your backup scheme!
+
+Snazzy rotating system-level backups using rsync and hard links.
