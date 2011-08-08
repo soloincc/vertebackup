@@ -29,7 +29,7 @@ DESTINATION=$MOUNTPOINT/backups
 NUMDAYS=14
 
 # 5. a list of files to include/exclude.
-BACKUP_LIST_FILE=/tmp/system_backup_${DATE}.lst
+BACKUP_LIST_FILE=/tmp/system_backup_$DATE.lst
 # customize this to exclude network mounts, the backup dir itself,
 # or anything else you're backing up manually etc
 #
@@ -107,7 +107,7 @@ echo "About to backup to ${DESTINATION}/backup.0"
 nice -n19 ionice -c2 -n7 rsync -az --inplace --numeric-ids --delete-excluded --exclude-from=$BACKUP_LIST_FILE --link-dest=$DESTINATION/backup.1 / $DESTINATION/backup.0/
 
 # clean up
-echo "Clean up (deleting $BACKUP_LIST_FILE)..."
+echo "	Clean up (deleting $BACKUP_LIST_FILE)..."
 rm $BACKUP_LIST_FILE
 
 exit 0
