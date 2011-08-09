@@ -1,3 +1,15 @@
-vertebackup - The backbone of your backup scheme!
+==== vertebackup: The backbone of your backup scheme! ====
 
-Snazzy rotating system-level backups using rsync and hard links.
+Snazzy rotating system-level backups using rsync and hard links.  Lame name, cool script.  All the cool names were taken.
+
+=== Usage ===
+vertebackup takes one argument, the UUID of the partition where your backups will live.  You can find the UUID of your
+partition with the `blkid` tool (make sure the disk is plugged in!).
+
+Make sure the disk is plugged in and partition mounted, then initial a backup like so:
+	sudo ./vertebackup.sh 070796a9-0e27-43e3-8fab-7eaa940e2dec
+
+=== Notes ===
+The script will try to reduce impact of IO on user responsiveness by running the script with `ionice`.  If your system
+doesn't have this tool installed the script will fail.  Just do yourself a favor and install it, in Ubuntu it is in the
+package `util-linux`.
