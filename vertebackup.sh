@@ -13,7 +13,7 @@ if [ -z $1 ]
 then
     echo 'Error: please pass the UUID of the backup partition as an argument to this script, ex:' 1>&2
     echo "	$0 bdd15f9f-ef1a-4643-89fd-c672d1b92c43" 1>&2
-    echo 'You can find the UUID of your backup partition using the `blkid` tool.' 1>&2
+    echo 'You can find the UUID of your backup partition using the `blkid` tool. Type `sudo blkid` on the command line to find out the UUID.' 1>&2
     exit 256
 fi
 
